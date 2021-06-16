@@ -3,12 +3,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI || "mongodb+srv://devendra01:Dev0106@@cluster0.5muze.mongodb.net/exercises?retryWrites=true&w=majority";
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
